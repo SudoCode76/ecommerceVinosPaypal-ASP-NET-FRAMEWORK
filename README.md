@@ -146,19 +146,22 @@ Y de esta manera hemos concluído con éxito toda la configuración necesaria pa
 
 
 
+<h2> Modificaciones a la base de datos </h2>
 
----
-
-<h2>Créditos correspondientes dentro de código fuente de esta aplicación | Muchas gracias por obtener este repositorio hecho con algunas tazas de café ☕ ❤️</h2>
-
-
+```sql
+DELETE FROM CARRITO;
 
 
- ![CSharp](https://user-images.githubusercontent.com/44457989/70968018-afb2cf00-205d-11ea-9b79-2ff5a0a100ac.png)<br>
- 
- 
- 
- <h4>*** Fecha de Subida: 11 agosto 2022 ***</h4>
+-- Eliminar primero los productos, ya que dependen de las marcas
+DELETE FROM PRODUCTO;
+
+-- Luego eliminar las marcas
+DELETE FROM MARCA;
+
+
+DBCC CHECKIDENT ('CARRITO', RESEED, 0);
+DBCC CHECKIDENT ('PRODUCTO', RESEED, 0);
+DBCC CHECKIDENT ('MARCA', RESEED, 0);
 
 
 
