@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "D:\\Trabajando\\Asp Net\\CarritoComprasPayPal-PasarelaPago\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1092B416-D295-4E90-8353-5C2D0DA08F0C}|CapaPresentacionTienda\\CapaPresentacionTienda.csproj|D:\\Trabajando\\Asp Net\\CarritoComprasPayPal-PasarelaPago\\capapresentaciontienda\\controllers\\tiendacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1092B416-D295-4E90-8353-5C2D0DA08F0C}|CapaPresentacionTienda\\CapaPresentacionTienda.csproj|d:\\trabajando\\asp net\\carritocompraspaypal-pasarelapago\\capapresentaciontienda\\views\\tienda\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1092B416-D295-4E90-8353-5C2D0DA08F0C}|CapaPresentacionTienda\\CapaPresentacionTienda.csproj|solutionrelative:capapresentaciontienda\\views\\tienda\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1092B416-D295-4E90-8353-5C2D0DA08F0C}|CapaPresentacionTienda\\CapaPresentacionTienda.csproj|d:\\trabajando\\asp net\\carritocompraspaypal-pasarelapago\\capapresentaciontienda\\views\\tienda\\detalleproducto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1092B416-D295-4E90-8353-5C2D0DA08F0C}|CapaPresentacionTienda\\CapaPresentacionTienda.csproj|solutionrelative:capapresentaciontienda\\views\\tienda\\detalleproducto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1092B416-D295-4E90-8353-5C2D0DA08F0C}|CapaPresentacionTienda\\CapaPresentacionTienda.csproj|d:\\trabajando\\asp net\\carritocompraspaypal-pasarelapago\\capapresentaciontienda\\controllers\\tiendacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1092B416-D295-4E90-8353-5C2D0DA08F0C}|CapaPresentacionTienda\\CapaPresentacionTienda.csproj|solutionrelative:capapresentaciontienda\\controllers\\tiendacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1092B416-D295-4E90-8353-5C2D0DA08F0C}|CapaPresentacionTienda\\CapaPresentacionTienda.csproj|d:\\trabajando\\asp net\\carritocompraspaypal-pasarelapago\\capapresentaciontienda\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1092B416-D295-4E90-8353-5C2D0DA08F0C}|CapaPresentacionTienda\\CapaPresentacionTienda.csproj|solutionrelative:capapresentaciontienda\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1092B416-D295-4E90-8353-5C2D0DA08F0C}|CapaPresentacionTienda\\CapaPresentacionTienda.csproj|D:\\Trabajando\\Asp Net\\CarritoComprasPayPal-PasarelaPago\\capapresentaciontienda\\views\\tienda\\test.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1092B416-D295-4E90-8353-5C2D0DA08F0C}|CapaPresentacionTienda\\CapaPresentacionTienda.csproj|solutionrelative:capapresentaciontienda\\views\\tienda\\test.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1092B416-D295-4E90-8353-5C2D0DA08F0C}|CapaPresentacionTienda\\CapaPresentacionTienda.csproj|D:\\Trabajando\\Asp Net\\CarritoComprasPayPal-PasarelaPago\\capapresentaciontienda\\views\\tienda\\detalleproducto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1092B416-D295-4E90-8353-5C2D0DA08F0C}|CapaPresentacionTienda\\CapaPresentacionTienda.csproj|solutionrelative:capapresentaciontienda\\views\\tienda\\detalleproducto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{C2FA3142-FA9B-4925-8258-71F9BF05A0B8}|CapaEntidad\\CapaEntidad.csproj|d:\\trabajando\\asp net\\carritocompraspaypal-pasarelapago\\capaentidad\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2FA3142-FA9B-4925-8258-71F9BF05A0B8}|CapaEntidad\\CapaEntidad.csproj|solutionrelative:capaentidad\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,53 +38,55 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TiendaController.cs",
-              "DocumentMoniker": "D:\\Trabajando\\Asp Net\\CarritoComprasPayPal-PasarelaPago\\CapaPresentacionTienda\\Controllers\\TiendaController.cs",
-              "RelativeDocumentMoniker": "CapaPresentacionTienda\\Controllers\\TiendaController.cs",
-              "ToolTip": "D:\\Trabajando\\Asp Net\\CarritoComprasPayPal-PasarelaPago\\CapaPresentacionTienda\\Controllers\\TiendaController.cs",
-              "RelativeToolTip": "CapaPresentacionTienda\\Controllers\\TiendaController.cs",
-              "ViewState": "AgIAADwAAAAAAAAAAAAqwFUAAABEAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "Producto.cs",
+              "DocumentMoniker": "D:\\Trabajando\\Asp Net\\CarritoComprasPayPal-PasarelaPago\\CapaEntidad\\Producto.cs",
+              "RelativeDocumentMoniker": "CapaEntidad\\Producto.cs",
+              "ToolTip": "D:\\Trabajando\\Asp Net\\CarritoComprasPayPal-PasarelaPago\\CapaEntidad\\Producto.cs",
+              "RelativeToolTip": "CapaEntidad\\Producto.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABgAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T18:12:42.246Z",
+              "WhenOpened": "2025-01-22T16:10:10.944Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Test.cshtml",
-              "DocumentMoniker": "D:\\Trabajando\\Asp Net\\CarritoComprasPayPal-PasarelaPago\\CapaPresentacionTienda\\Views\\Tienda\\Test.cshtml",
-              "RelativeDocumentMoniker": "CapaPresentacionTienda\\Views\\Tienda\\Test.cshtml",
-              "ToolTip": "D:\\Trabajando\\Asp Net\\CarritoComprasPayPal-PasarelaPago\\CapaPresentacionTienda\\Views\\Tienda\\Test.cshtml",
-              "RelativeToolTip": "CapaPresentacionTienda\\Views\\Tienda\\Test.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-18T18:08:20.509Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\Trabajando\\Asp Net\\CarritoComprasPayPal-PasarelaPago\\CapaPresentacionTienda\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "CapaPresentacionTienda\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\Trabajando\\Asp Net\\CarritoComprasPayPal-PasarelaPago\\CapaPresentacionTienda\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "CapaPresentacionTienda\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB0AAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-18T17:42:44.616Z",
+              "Title": "TiendaController.cs",
+              "DocumentMoniker": "D:\\Trabajando\\Asp Net\\CarritoComprasPayPal-PasarelaPago\\CapaPresentacionTienda\\Controllers\\TiendaController.cs",
+              "RelativeDocumentMoniker": "CapaPresentacionTienda\\Controllers\\TiendaController.cs",
+              "ToolTip": "D:\\Trabajando\\Asp Net\\CarritoComprasPayPal-PasarelaPago\\CapaPresentacionTienda\\Controllers\\TiendaController.cs",
+              "RelativeToolTip": "CapaPresentacionTienda\\Controllers\\TiendaController.cs",
+              "ViewState": "AgIAABUBAAAAAAAAAADwvyYBAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-22T16:04:19.726Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Trabajando\\Asp Net\\CarritoComprasPayPal-PasarelaPago\\CapaPresentacionTienda\\Views\\Tienda\\Index.cshtml",
+              "RelativeDocumentMoniker": "CapaPresentacionTienda\\Views\\Tienda\\Index.cshtml",
+              "ToolTip": "D:\\Trabajando\\Asp Net\\CarritoComprasPayPal-PasarelaPago\\CapaPresentacionTienda\\Views\\Tienda\\Index.cshtml",
+              "RelativeToolTip": "CapaPresentacionTienda\\Views\\Tienda\\Index.cshtml",
+              "ViewState": "AgIAALsAAAAAAAAAAAAtwNEAAABvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-22T15:39:23.587Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "DetalleProducto.cshtml",
               "DocumentMoniker": "D:\\Trabajando\\Asp Net\\CarritoComprasPayPal-PasarelaPago\\CapaPresentacionTienda\\Views\\Tienda\\DetalleProducto.cshtml",
               "RelativeDocumentMoniker": "CapaPresentacionTienda\\Views\\Tienda\\DetalleProducto.cshtml",
               "ToolTip": "D:\\Trabajando\\Asp Net\\CarritoComprasPayPal-PasarelaPago\\CapaPresentacionTienda\\Views\\Tienda\\DetalleProducto.cshtml",
               "RelativeToolTip": "CapaPresentacionTienda\\Views\\Tienda\\DetalleProducto.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-18T17:40:00.487Z"
+              "WhenOpened": "2025-01-22T15:39:18.603Z",
+              "EditorCaption": ""
             }
           ]
         }

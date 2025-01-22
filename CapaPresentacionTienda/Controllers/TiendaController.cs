@@ -33,12 +33,12 @@ namespace CapaPresentacionTienda.Controllers
         public ActionResult DetalleProducto(int idproducto = 0)
         {
             Producto oProducto = new Producto();
-            bool conversion;
             oProducto = new CN_Producto().Listar().Where(p => p.IdProducto == idproducto).FirstOrDefault();
+
             if (oProducto != null)
             {
-                oProducto.Base64 = CN_Recursos.ConvertirBase64(Path.Combine(oProducto.RutaImagen, oProducto.NombreImagen),out conversion);
-                oProducto.Extension = Path.GetExtension(oProducto.NombreImagen);
+                // Asegúrate de que la ruta de la imagen sea accesible desde la web
+                oProducto.RutaImagen = oProducto.RutaImagen; // Usamos la ruta directamente
             }
 
             return View(oProducto);
@@ -67,7 +67,6 @@ namespace CapaPresentacionTienda.Controllers
         public JsonResult ListarProductos(int idcategoria, int idmarca)
         {
             List<Producto> lista = new List<Producto>();
-            bool conversion;
             lista = new CN_Producto().Listar().Select(p => new Producto()
             {
                 IdProducto = p.IdProducto,
@@ -77,15 +76,14 @@ namespace CapaPresentacionTienda.Controllers
                 oCategoria = p.oCategoria,
                 Precio = p.Precio,
                 Stock = p.Stock,
-                RutaImagen = p.RutaImagen,
-                Base64 = CN_Recursos.ConvertirBase64(Path.Combine(p.RutaImagen, p.NombreImagen), out conversion),
-                Extension = Path.GetExtension(p.NombreImagen),
+                RutaImagen = p.RutaImagen, // modificacion ruta imagen
                 Activo = p.Activo
             }).Where(p =>
                 p.oCategoria.IdCategoria == (idcategoria == 0 ? p.oCategoria.IdCategoria : idcategoria) &&
                 p.oMarca.IdMarca == (idmarca == 0 ? p.oMarca.IdMarca : idmarca) &&
                 p.Stock > 0 && p.Activo == true
-                ).ToList();
+            ).ToList();
+
             var jsonresult = Json(new { data = lista }, JsonRequestBehavior.AllowGet);
             jsonresult.MaxJsonLength = int.MaxValue;
             return jsonresult;
@@ -122,9 +120,8 @@ namespace CapaPresentacionTienda.Controllers
         [HttpPost]
         public JsonResult ListarProductosCarrito()
         {
-            int idcliente = ((Cliente)Session["Cliente"]).IdCliente; // CONVERTIR LA VARIABLE DE SESION EN UN OBJETO CLIENTE
+            int idcliente = ((Cliente)Session["Cliente"]).IdCliente;
             List<Carrito> oLista = new List<Carrito>();
-            bool conversion;
             oLista = new CN_Carrito().ListarProducto(idcliente).Select(listacompra => new Carrito()
             {
                 oProducto = new Producto()
@@ -133,11 +130,11 @@ namespace CapaPresentacionTienda.Controllers
                     Nombre = listacompra.oProducto.Nombre,
                     oMarca = listacompra.oProducto.oMarca,
                     Precio = listacompra.oProducto.Precio,
-                    RutaImagen = listacompra.oProducto.RutaImagen,
-                    Base64 = CN_Recursos.ConvertirBase64(Path.Combine(listacompra.oProducto.RutaImagen, listacompra.oProducto.NombreImagen), out conversion), Extension = Path.GetExtension(listacompra.oProducto.NombreImagen)
+                    RutaImagen = listacompra.oProducto.RutaImagen // Usamos la ruta directamente
                 },
                 Cantidad = listacompra.Cantidad
             }).ToList();
+
             return Json(new { data = oLista }, JsonRequestBehavior.AllowGet);
         }
 
@@ -291,22 +288,21 @@ namespace CapaPresentacionTienda.Controllers
         [Authorize]
         public ActionResult MisCompras()
         {
-            int idcliente = ((Cliente)Session["Cliente"]).IdCliente; // CONVERTIR LA VARIABLE DE SESION EN UN OBJETO CLIENTE
+            int idcliente = ((Cliente)Session["Cliente"]).IdCliente;
             List<DetalleVenta> oLista = new List<DetalleVenta>();
-            bool conversion;
             oLista = new CN_Venta().ListarCompras(idcliente).Select(listacompra => new DetalleVenta()
             {
                 oProducto = new Producto()
                 {
                     Nombre = listacompra.oProducto.Nombre,
                     Precio = listacompra.oProducto.Precio,
-                    Base64 = CN_Recursos.ConvertirBase64(Path.Combine(listacompra.oProducto.RutaImagen, listacompra.oProducto.NombreImagen), out conversion),
-                    Extension = Path.GetExtension(listacompra.oProducto.NombreImagen)
+                    RutaImagen = listacompra.oProducto.RutaImagen // Usamos la ruta directamente
                 },
                 Cantidad = listacompra.Cantidad,
                 Total = listacompra.Total,
                 IdTransaccion = listacompra.IdTransaccion
             }).ToList();
+
             return View(oLista);
         }
 
