@@ -25,3 +25,21 @@ D:\Trabajando\Asp Net\CarritoComprasPayPal-PasarelaPago\CapaDatos\obj\Debug\Capa
 D:\Trabajando\Asp Net\CarritoComprasPayPal-PasarelaPago\CapaDatos\obj\Debug\CapaDatos.csproj.Up2Date
 D:\Trabajando\Asp Net\CarritoComprasPayPal-PasarelaPago\CapaDatos\obj\Debug\CapaDatos.dll
 D:\Trabajando\Asp Net\CarritoComprasPayPal-PasarelaPago\CapaDatos\obj\Debug\CapaDatos.pdb
+D:\sexto semestre\Progra Web II\proyecto aspNet\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaDatos\bin\Debug\CapaDatos.dll
+D:\sexto semestre\Progra Web II\proyecto aspNet\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaDatos\bin\Debug\CapaDatos.pdb
+D:\sexto semestre\Progra Web II\proyecto aspNet\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaDatos\bin\Debug\CapaEntidad.dll
+D:\sexto semestre\Progra Web II\proyecto aspNet\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaDatos\bin\Debug\CapaEntidad.pdb
+D:\sexto semestre\Progra Web II\proyecto aspNet\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaDatos\obj\Debug\CapaDatos.csproj.AssemblyReference.cache
+D:\sexto semestre\Progra Web II\proyecto aspNet\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
+D:\sexto semestre\Progra Web II\proyecto aspNet\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaDatos\obj\Debug\CapaDatos.csproj.CopyComplete
+D:\sexto semestre\Progra Web II\proyecto aspNet\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaDatos\obj\Debug\CapaDatos.dll
+D:\sexto semestre\Progra Web II\proyecto aspNet\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaDatos\obj\Debug\CapaDatos.pdb
+D:\Trabajando\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaDatos\bin\Debug\CapaDatos.dll
+D:\Trabajando\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaDatos\bin\Debug\CapaDatos.pdb
+D:\Trabajando\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaDatos\bin\Debug\CapaEntidad.dll
+D:\Trabajando\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaDatos\bin\Debug\CapaEntidad.pdb
+D:\Trabajando\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaDatos\obj\Debug\CapaDatos.csproj.AssemblyReference.cache
+D:\Trabajando\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
+D:\Trabajando\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaDatos\obj\Debug\CapaDatos.csproj.Up2Date
+D:\Trabajando\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaDatos\obj\Debug\CapaDatos.dll
+D:\Trabajando\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaDatos\obj\Debug\CapaDatos.pdb

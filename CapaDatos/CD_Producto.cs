@@ -82,10 +82,12 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("IdCategoria", obj.oCategoria.IdCategoria);
                     cmd.Parameters.AddWithValue("Precio", obj.Precio);
                     cmd.Parameters.AddWithValue("Stock", obj.Stock);
-                    cmd.Parameters.AddWithValue("Activo", obj.Activo);
+
+                    // Agregar el parámetro RutaImagen
+                    cmd.Parameters.AddWithValue("RutaImagen", obj.RutaImagen);  // Asegúrate de que esta propiedad esté correctamente configurada en el modelo Producto
+                    cmd.Parameters.AddWithValue("NombreImagen", obj.NombreImagen);
                     cmd.Parameters.AddWithValue("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
-                    //cmd.Parameters.AddWithValue("Mensaje", SqlDbType.VarChar,500).Direction = ParameterDirection.Output;
-                    cmd.Parameters.AddWithValue("Mensaje", SqlDbType.VarChar).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 250).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     oconexion.Open();
@@ -122,14 +124,14 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("IdCategoria", obj.oCategoria.IdCategoria);
                     cmd.Parameters.AddWithValue("Precio", obj.Precio);
                     cmd.Parameters.AddWithValue("Stock", obj.Stock);
-                    cmd.Parameters.AddWithValue("Activo", obj.Activo);
+                    cmd.Parameters.AddWithValue("RutaImagen", obj.RutaImagen);
+                    cmd.Parameters.AddWithValue("NombreImagen", obj.NombreImagen); // Asegúrate de que este campo esté siendo actualizado
+
                     cmd.Parameters.AddWithValue("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
-                    //cmd.Parameters.AddWithValue("Mensaje", SqlDbType.VarChar,500).Direction = ParameterDirection.Output;
-                    cmd.Parameters.AddWithValue("Mensaje", SqlDbType.VarChar).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 250).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     oconexion.Open();
-
                     cmd.ExecuteNonQuery();
 
                     resultado = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
@@ -145,6 +147,7 @@ namespace CapaDatos
         }
 
 
+
         // EIMINAR (OCULTAR) PRODUCTOS -> DELETE SOLAMENTE SE EJECUTA POR MEDIO DE CONSULTA ESPECIFICA
         public bool Eliminar(int id, out string Mensaje)
         {
@@ -157,8 +160,7 @@ namespace CapaDatos
                     SqlCommand cmd = new SqlCommand("sp_EliminarProducto", oconexion);
                     cmd.Parameters.AddWithValue("IdProducto", id);
                     cmd.Parameters.AddWithValue("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
-                    //cmd.Parameters.AddWithValue("Mensaje", SqlDbType.VarChar,500).Direction = ParameterDirection.Output;
-                    cmd.Parameters.AddWithValue("Mensaje", SqlDbType.VarChar).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 250).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     oconexion.Open();
@@ -188,22 +190,20 @@ namespace CapaDatos
             {
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cn))
                 {
-                    string query = "UPDATE PRODUCTO SET RutaImagen = @RutaImagen, NombreImagen = @NombreImagen WHERE IdProducto = @IdProducto";
-
-                    SqlCommand cmd = new SqlCommand(query, oconexion);
+                    SqlCommand cmd = new SqlCommand("sp_GuardarImagenProducto", oconexion);
+                    cmd.Parameters.AddWithValue("IdProducto", obj.IdProducto);
                     cmd.Parameters.AddWithValue("RutaImagen", obj.RutaImagen);
                     cmd.Parameters.AddWithValue("NombreImagen", obj.NombreImagen);
-                    cmd.Parameters.AddWithValue("IdProducto", obj.IdProducto);
-                    cmd.CommandType = CommandType.Text;
+                    cmd.Parameters.AddWithValue("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 250).Direction = ParameterDirection.Output;
+                    cmd.CommandType = CommandType.StoredProcedure;
+
                     oconexion.Open();
-                    if(cmd.ExecuteNonQuery() > 0)
-                    {
-                        resultado = true;
-                    }
-                    else
-                    {
-                        Mensaje = "Lo sentimos, no fue posible actualizar la imagen";
-                    }
+
+                    cmd.ExecuteNonQuery();
+
+                    resultado = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
+                    Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
                 }
             }
             catch (Exception ex)
@@ -213,7 +213,6 @@ namespace CapaDatos
             }
 
             return resultado;
-
         }
 
     }

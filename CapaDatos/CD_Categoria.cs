@@ -1,26 +1,4 @@
-﻿/*
-
-░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-░        CARRITO DE COMPRAS / MVC ASP.NET ADO.NET          ░
-░--------------------------------------------------------- ░
-░- -> IDEA ORIGINAL POR PARTE DE [ CODIGO ESTUDIANTE ]     ░
-░--------------------------------------------------------- ░
-░- -> ADECUADO Y MODIFICADO POR DANIEL RIVERA              ░
-░--------------------------------------------------------- ░
-░- -> C# - ASP.NET / ADO.NET => .NET FRAMEWORK 4.7 up+     ░
-░- -> GITHUB: (danielrivera03)                             ░
-░     https://github.com/DanielRivera03                    ░
-░--------------------------------------------------------- ░
-░- -> TODOS LOS DERECHOS RESERVADOS © 2022                 ░
-░                                                          ░
-░        ♥♥ HECHO CON ALGUNAS TAZAS DE CAFE ♥♥             ░
-░                                                          ░
-░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
--> POR FAVOR REALIZAR TODAS LAS ADECUACIONES PERTINENTES
-       
-*/
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -84,20 +62,20 @@ namespace CapaDatos
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cn))
                 {
                     SqlCommand cmd = new SqlCommand("sp_RegistrarCategoria", oconexion);
-                    cmd.Parameters.AddWithValue("Descripcion", obj.Descripcion);
-                    cmd.Parameters.AddWithValue("Activo", obj.Activo);
-                    cmd.Parameters.AddWithValue("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
-                    //cmd.Parameters.AddWithValue("Mensaje", SqlDbType.VarChar,500).Direction = ParameterDirection.Output;
-                    cmd.Parameters.AddWithValue("Mensaje", SqlDbType.VarChar).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    oconexion.Open();
+                    // Asegúrate de pasar valores correctos a los parámetros
+                    cmd.Parameters.AddWithValue("@Descripcion", obj.Descripcion); // Cadena de texto
+                    cmd.Parameters.Add("@Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("@Mensaje", SqlDbType.NVarChar, 250).Direction = ParameterDirection.Output;
 
+                    oconexion.Open();
                     cmd.ExecuteNonQuery();
 
-                    idautogenerado = Convert.ToInt32(cmd.Parameters["Resultado"].Value);
-                    Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
+                    idautogenerado = Convert.ToInt32(cmd.Parameters["@Resultado"].Value);
+                    Mensaje = cmd.Parameters["@Mensaje"].Value.ToString();
                 }
+
             }
             catch (Exception ex)
             {
@@ -112,23 +90,24 @@ namespace CapaDatos
         {
             bool resultado = false;
             Mensaje = string.Empty;
+
             try
             {
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cn))
                 {
                     SqlCommand cmd = new SqlCommand("sp_EditarCategoria", oconexion);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
                     cmd.Parameters.AddWithValue("IdCategoria", obj.IdCategoria);
                     cmd.Parameters.AddWithValue("Descripcion", obj.Descripcion);
                     cmd.Parameters.AddWithValue("Activo", obj.Activo);
-                    cmd.Parameters.AddWithValue("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
-                    //cmd.Parameters.AddWithValue("Mensaje", SqlDbType.VarChar,500).Direction = ParameterDirection.Output;
-                    cmd.Parameters.AddWithValue("Mensaje", SqlDbType.VarChar).Direction = ParameterDirection.Output;
-                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 250).Direction = ParameterDirection.Output;
 
                     oconexion.Open();
-
                     cmd.ExecuteNonQuery();
 
+                    // Recuperar los valores de salida
                     resultado = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
                     Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
                 }
@@ -138,6 +117,7 @@ namespace CapaDatos
                 resultado = false;
                 Mensaje = ex.Message;
             }
+
             return resultado;
         }
 

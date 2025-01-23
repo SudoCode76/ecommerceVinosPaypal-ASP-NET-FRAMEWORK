@@ -1,0 +1,41 @@
+﻿@model IEnumerable<CapaEntidad.Categoria>
+
+@{
+    ViewBag.Title = "ListaCategorias";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<h2>Lista de Categorias</h2>
+<link href="~/Content/Site.css" rel="stylesheet" />
+
+<div style="text-align: right" class="form-inline">
+
+    <a href="Registrar" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"> Registrar</span></a>
+
+</div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+
+            <td style="text-align: center">
+
+                <button class="btn btn-default" type="button" id="btn_act" name="btn_act" onclick="location.href='../Categoria/Editar?Id=@item.IdCategoria'"><span class="glyphicon glyphicon-edit"> Editar</span></button>
+                <button class="btn btn-danger" type="button" id="btn_eli" name="btn_eli" onclick="location.href='../Categoria/Eliminar?Id=@item.IdCategoria'"><span class="glyphicon glyphicon-trash"> Eliminar</span></button>
+            </td>
+        </tr>
+    }
+
+</table>
+
+

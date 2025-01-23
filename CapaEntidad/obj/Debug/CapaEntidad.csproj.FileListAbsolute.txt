@@ -16,3 +16,15 @@ D:\Trabajando\Asp Net\CarritoComprasPayPal-PasarelaPago\CapaEntidad\obj\Debug\Ca
 D:\Trabajando\Asp Net\CarritoComprasPayPal-PasarelaPago\CapaEntidad\obj\Debug\CapaEntidad.csproj.CoreCompileInputs.cache
 D:\Trabajando\Asp Net\CarritoComprasPayPal-PasarelaPago\CapaEntidad\obj\Debug\CapaEntidad.dll
 D:\Trabajando\Asp Net\CarritoComprasPayPal-PasarelaPago\CapaEntidad\obj\Debug\CapaEntidad.pdb
+D:\sexto semestre\Progra Web II\proyecto aspNet\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaEntidad\bin\Debug\CapaEntidad.dll
+D:\sexto semestre\Progra Web II\proyecto aspNet\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaEntidad\bin\Debug\CapaEntidad.pdb
+D:\sexto semestre\Progra Web II\proyecto aspNet\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaEntidad\obj\Debug\CapaEntidad.csproj.AssemblyReference.cache
+D:\sexto semestre\Progra Web II\proyecto aspNet\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaEntidad\obj\Debug\CapaEntidad.csproj.CoreCompileInputs.cache
+D:\sexto semestre\Progra Web II\proyecto aspNet\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaEntidad\obj\Debug\CapaEntidad.dll
+D:\sexto semestre\Progra Web II\proyecto aspNet\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaEntidad\obj\Debug\CapaEntidad.pdb
+D:\Trabajando\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaEntidad\bin\Debug\CapaEntidad.dll
+D:\Trabajando\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaEntidad\bin\Debug\CapaEntidad.pdb
+D:\Trabajando\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaEntidad\obj\Debug\CapaEntidad.csproj.AssemblyReference.cache
+D:\Trabajando\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaEntidad\obj\Debug\CapaEntidad.csproj.CoreCompileInputs.cache
+D:\Trabajando\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaEntidad\obj\Debug\CapaEntidad.dll
+D:\Trabajando\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaEntidad\obj\Debug\CapaEntidad.pdb

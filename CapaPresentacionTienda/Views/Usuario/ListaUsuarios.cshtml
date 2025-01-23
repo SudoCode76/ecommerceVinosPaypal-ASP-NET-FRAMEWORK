@@ -1,0 +1,47 @@
+﻿@model IEnumerable<CapaEntidad.Administrativo>
+
+@{
+    ViewBag.Title = "ListaUsuarios";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<h2>Lista de Usuarios</h2>
+<link href="~/Content/Site.css" rel="stylesheet" />
+
+<div style="text-align: right" class="form-inline">
+    <a href="Registrar" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"> Registrar</span></a>
+
+</div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombres)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Apellidos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Correo)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombres)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Apellidos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Correo)
+            </td>
+
+
+        </tr>
+    }
+
+</table>

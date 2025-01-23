@@ -29,6 +29,23 @@ namespace CapaPresentacionTienda.Controllers
             return View();
         }
 
+        public ActionResult Productos()
+        {
+            return View();
+        }
+
+        public ActionResult Nosotros()
+        {
+            return View();
+        }
+
+        public ActionResult Contacto()
+        {
+            return View();
+        }
+
+
+
         // VISTA DETALLES DE PRODUCTOS
         public ActionResult DetalleProducto(int idproducto = 0)
         {
@@ -37,7 +54,6 @@ namespace CapaPresentacionTienda.Controllers
 
             if (oProducto != null)
             {
-                // Asegúrate de que la ruta de la imagen sea accesible desde la web
                 oProducto.RutaImagen = oProducto.RutaImagen; // Usamos la ruta directamente
             }
 

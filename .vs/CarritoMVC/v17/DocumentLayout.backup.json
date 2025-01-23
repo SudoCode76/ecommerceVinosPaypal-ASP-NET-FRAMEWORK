@@ -1,14 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Trabajando\\Asp Net\\CarritoComprasPayPal-PasarelaPago\\",
+  "WorkspaceRootPath": "D:\\Trabajando\\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1092B416-D295-4E90-8353-5C2D0DA08F0C}|CapaPresentacionTienda\\CapaPresentacionTienda.csproj|d:\\trabajando\\asp net\\carritocompraspaypal-pasarelapago\\capapresentaciontienda\\views\\tienda\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{1092B416-D295-4E90-8353-5C2D0DA08F0C}|CapaPresentacionTienda\\CapaPresentacionTienda.csproj|d:\\trabajando\\ecommercevinospaypal-asp-net-framework\\ecommercevinospaypal-asp-net-framework\\capapresentaciontienda\\views\\tienda\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{1092B416-D295-4E90-8353-5C2D0DA08F0C}|CapaPresentacionTienda\\CapaPresentacionTienda.csproj|solutionrelative:capapresentaciontienda\\views\\tienda\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1092B416-D295-4E90-8353-5C2D0DA08F0C}|CapaPresentacionTienda\\CapaPresentacionTienda.csproj|d:\\trabajando\\asp net\\carritocompraspaypal-pasarelapago\\capapresentaciontienda\\views\\tienda\\detalleproducto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1092B416-D295-4E90-8353-5C2D0DA08F0C}|CapaPresentacionTienda\\CapaPresentacionTienda.csproj|solutionrelative:capapresentaciontienda\\views\\tienda\\detalleproducto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -32,26 +28,13 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\Trabajando\\Asp Net\\CarritoComprasPayPal-PasarelaPago\\CapaPresentacionTienda\\Views\\Tienda\\Index.cshtml",
+              "DocumentMoniker": "D:\\Trabajando\\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\\CapaPresentacionTienda\\Views\\Tienda\\Index.cshtml",
               "RelativeDocumentMoniker": "CapaPresentacionTienda\\Views\\Tienda\\Index.cshtml",
-              "ToolTip": "D:\\Trabajando\\Asp Net\\CarritoComprasPayPal-PasarelaPago\\CapaPresentacionTienda\\Views\\Tienda\\Index.cshtml",
+              "ToolTip": "D:\\Trabajando\\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\\CapaPresentacionTienda\\Views\\Tienda\\Index.cshtml",
               "RelativeToolTip": "CapaPresentacionTienda\\Views\\Tienda\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-22T15:39:23.587Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DetalleProducto.cshtml",
-              "DocumentMoniker": "D:\\Trabajando\\Asp Net\\CarritoComprasPayPal-PasarelaPago\\CapaPresentacionTienda\\Views\\Tienda\\DetalleProducto.cshtml",
-              "RelativeDocumentMoniker": "CapaPresentacionTienda\\Views\\Tienda\\DetalleProducto.cshtml",
-              "ToolTip": "D:\\Trabajando\\Asp Net\\CarritoComprasPayPal-PasarelaPago\\CapaPresentacionTienda\\Views\\Tienda\\DetalleProducto.cshtml",
-              "RelativeToolTip": "CapaPresentacionTienda\\Views\\Tienda\\DetalleProducto.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-22T15:39:18.603Z",
+              "WhenOpened": "2025-01-23T05:24:07.167Z",
               "EditorCaption": ""
             }
           ]
