@@ -120,13 +120,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AccesoAdminController.cs" />
     <Compile Include="Controllers\AccesoController.cs" />
-    <Compile Include="Controllers\CategoriaController.cs" />
-    <Compile Include="Controllers\MarcaController.cs" />
-    <Compile Include="Controllers\ProductoController.cs" />
     <Compile Include="Controllers\TiendaController.cs" />
-    <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Filter\ValidarSessionAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -262,19 +257,6 @@
     <Content Include="Views\Tienda\Carrito.cshtml" />
     <Content Include="Views\Tienda\Pagoefectuado.cshtml" />
     <Content Include="Views\Tienda\MisCompras.cshtml" />
-    <Content Include="Views\Tienda\Test.cshtml" />
-    <Content Include="Views\Usuario\ListaUsuarios.cshtml" />
-    <Content Include="Views\Usuario\Registrar.cshtml" />
-    <Content Include="Views\AccesoAdmin\Index.cshtml" />
-    <Content Include="Views\Categoria\ListaCategorias.cshtml" />
-    <Content Include="Views\Categoria\Registrar.cshtml" />
-    <Content Include="Views\Marca\Editar.cshtml" />
-    <Content Include="Views\Categoria\Editar.cshtml" />
-    <Content Include="Views\Marca\ListaMarcas.cshtml" />
-    <Content Include="Views\Marca\Registrar.cshtml" />
-    <Content Include="Views\Producto\ListaProductos.cshtml" />
-    <Content Include="Views\Producto\Registrar.cshtml" />
-    <Content Include="Views\Producto\Editar.cshtml" />
     <Content Include="Views\Tienda\Contacto.cshtml" />
     <Content Include="Views\Tienda\Nosotros.cshtml" />
     <Content Include="Views\Tienda\Productos.cshtml" />

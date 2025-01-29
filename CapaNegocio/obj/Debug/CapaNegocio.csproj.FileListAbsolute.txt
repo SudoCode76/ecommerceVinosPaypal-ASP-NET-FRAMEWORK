@@ -103,3 +103,24 @@ D:\Trabajando\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\ecommerceVinosPaypal-ASP-NE
 D:\Trabajando\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaNegocio\obj\Debug\CapaNego.81B9D119.Up2Date
 D:\Trabajando\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaNegocio\obj\Debug\CapaNegocio.dll
 D:\Trabajando\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaNegocio\obj\Debug\CapaNegocio.pdb
+D:\Trabajando\Asp Net\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaNegocio\bin\Debug\CapaNegocio.dll
+D:\Trabajando\Asp Net\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaNegocio\bin\Debug\CapaNegocio.pdb
+D:\Trabajando\Asp Net\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaNegocio\bin\Debug\CapaDatos.dll
+D:\Trabajando\Asp Net\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaNegocio\bin\Debug\CapaEntidad.dll
+D:\Trabajando\Asp Net\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaNegocio\bin\Debug\Newtonsoft.Json.dll
+D:\Trabajando\Asp Net\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaNegocio\bin\Debug\System.Configuration.ConfigurationManager.dll
+D:\Trabajando\Asp Net\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaNegocio\bin\Debug\System.Security.AccessControl.dll
+D:\Trabajando\Asp Net\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaNegocio\bin\Debug\System.Security.Permissions.dll
+D:\Trabajando\Asp Net\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaNegocio\bin\Debug\System.Security.Principal.Windows.dll
+D:\Trabajando\Asp Net\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaNegocio\bin\Debug\CapaDatos.pdb
+D:\Trabajando\Asp Net\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaNegocio\bin\Debug\CapaEntidad.pdb
+D:\Trabajando\Asp Net\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaNegocio\bin\Debug\Newtonsoft.Json.xml
+D:\Trabajando\Asp Net\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaNegocio\bin\Debug\System.Configuration.ConfigurationManager.xml
+D:\Trabajando\Asp Net\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaNegocio\bin\Debug\System.Security.AccessControl.xml
+D:\Trabajando\Asp Net\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaNegocio\bin\Debug\System.Security.Permissions.xml
+D:\Trabajando\Asp Net\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaNegocio\bin\Debug\System.Security.Principal.Windows.xml
+D:\Trabajando\Asp Net\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaNegocio\obj\Debug\CapaNegocio.csproj.AssemblyReference.cache
+D:\Trabajando\Asp Net\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaNegocio\obj\Debug\CapaNegocio.csproj.CoreCompileInputs.cache
+D:\Trabajando\Asp Net\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaNegocio\obj\Debug\CapaNego.81B9D119.Up2Date
+D:\Trabajando\Asp Net\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaNegocio\obj\Debug\CapaNegocio.dll
+D:\Trabajando\Asp Net\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaNegocio\obj\Debug\CapaNegocio.pdb
