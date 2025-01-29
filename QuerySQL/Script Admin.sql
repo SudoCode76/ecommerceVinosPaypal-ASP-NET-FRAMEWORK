@@ -403,3 +403,15 @@ FROM
     sys.procedures
 ORDER BY 
     name;
+
+
+INSERT INTO ADMINISTRATIVO (Nombres, Apellidos, Correo, Clave, Activo)
+VALUES (
+    'admin',
+    'admin',
+    'admin@admin.com',
+    CONVERT(VARCHAR(150), HASHBYTES('SHA2_256', 'admin'), 2), -- Genera el hash SHA-256
+    1 -- Activo por defecto
+);
+
+SELECT * FROM ADMINISTRATIVO;

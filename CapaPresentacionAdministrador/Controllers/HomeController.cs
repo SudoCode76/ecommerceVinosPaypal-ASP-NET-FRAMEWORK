@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaNegocio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,18 @@ namespace CapaPresentacionAdministrador.Controllers
 {
     public class HomeController : Controller
     {
+
         public ActionResult Index()
         {
             return View();
         }
-        
+
+        public ActionResult Dashboard()
+        {
+
+
+            return View();
+        }
+
     }
 }

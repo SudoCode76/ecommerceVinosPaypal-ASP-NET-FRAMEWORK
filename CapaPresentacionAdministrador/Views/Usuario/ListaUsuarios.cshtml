@@ -5,43 +5,44 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 
 }
+<h2 class="h3 mb-2 text-gray-800">Lista de Usuarios</h2>
+<p class="mb-4">Esta es la lista de usuarios registrados en el sistema. Puede buscar y ordenar los datos utilizando la tabla interactiva.</p>
 
-<h2>Lista de Usuarios</h2>
-<link href="~/Content/Site.css" rel="stylesheet" />
-
-<div style="text-align: right" class="form-inline">
-    <a href="Registrar" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"> Registrar</span></a>
-
+<!-- Botón para registrar un nuevo usuario -->
+<div style="text-align: right" class="form-inline mb-3">
+    <a href="Registrar" class="btn btn-primary">
+        <i class="fas fa-plus"></i> Registrar Usuario
+    </a>
 </div>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Nombres)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Apellidos)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Correo)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nombres)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Apellidos)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Correo)
-            </td>
 
 
-        </tr>
-    }
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Lista de Usuarios</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Nombres)</th>
+                        <th>@Html.DisplayNameFor(model => model.Apellidos)</th>
+                        <th>@Html.DisplayNameFor(model => model.Correo)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.Nombres)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Apellidos)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Correo)</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 
-</table>
+

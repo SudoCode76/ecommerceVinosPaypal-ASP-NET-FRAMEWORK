@@ -13,6 +13,7 @@ namespace CapaDatos
 {
     public class CD_Venta
     {
+
         public bool Registrar(Venta obj, DataTable DetalleVenta, out string Mensaje)
         {
             bool respuesta = false;
@@ -98,5 +99,9 @@ namespace CapaDatos
             return lista;
         }
 
+        
+
     }
+
 }
+

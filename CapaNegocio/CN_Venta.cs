@@ -22,5 +22,6 @@ namespace CapaNegocio
         {
             return objCapaDato.ListarCompras(idcliente);
         }
+
     }
 }

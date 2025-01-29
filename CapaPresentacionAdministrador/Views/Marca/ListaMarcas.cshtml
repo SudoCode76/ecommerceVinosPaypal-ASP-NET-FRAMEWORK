@@ -1,41 +1,73 @@
 ﻿@model IEnumerable<CapaEntidad.Marca>
 
 @{
-    ViewBag.Title = "ListaCategorias";
+    ViewBag.Title = "ListaMarcas";
     Layout = "~/Views/Shared/_Layout.cshtml";
-
 }
 
-<h2>Lista de Marcas</h2>
-<link href="~/Content/Site.css" rel="stylesheet" />
+<h2 class="h3 mb-2 text-gray-800">Lista de Marcas</h2>
+<p class="mb-4">Listado de marcas registradas en el sistema. Puede buscar y ordenar los datos utilizando la tabla interactiva.</p>
 
-<div style="text-align: right" class="form-inline">
-
-    <a href="Registrar" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"> Registrar</span></a>
-
+<!-- Botón para registrar una nueva marca -->
+<div class="d-flex justify-content-end mb-3">
+    <a href="Registrar" class="btn btn-primary">
+        <i class="fas fa-plus"></i> Registrar Marca
+    </a>
 </div>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Descripcion)
-        </th>
-    </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Descripcion)
-            </td>
+<!-- Tabla de marcas -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Lista de Marcas</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Descripcion)</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Descripcion)</th>
+                        <th>Acciones</th>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.Descripcion)</td>
+                            <td class="text-center">
+                                <a href="@Url.Action("Editar", "Marca", new { id = item.IdMarca })" class="btn btn-warning btn-sm">
+                                    <i class="fas fa-edit"></i> Editar
+                                </a>
+                                <a href="@Url.Action("Eliminar", "Marca", new { id = item.IdMarca })" class="btn btn-danger btn-sm">
+                                    <i class="fas fa-trash"></i> Eliminar
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 
-            <td style="text-align: center">
+@section Scripts {
+    <!-- DataTables Scripts -->
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
 
-                <button class="btn btn-default" type="button" id="btn_act" name="btn_act" onclick="location.href = '../Marca/Editar?Id=@item.IdMarca'"><span class="glyphicon glyphicon-edit"> Editar</span></button>
-                <button class="btn btn-danger" type="button" id="btn_eli" name="btn_eli" onclick="location.href='../Marca/Eliminar?Id=@item.IdMarca'"><span class="glyphicon glyphicon-trash"> Eliminar</span></button>
-            </td>
-        </tr>
-    }
-
-</table>
-
-
+    <script>
+        $(document).ready(function () {
+            $('#dataTable').DataTable({
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.11.5/i18n/Spanish.json"
+                }
+            });
+        });
+    </script>
+}
