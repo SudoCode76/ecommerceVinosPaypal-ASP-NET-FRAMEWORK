@@ -28,3 +28,9 @@ D:\Trabajando\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\ecommerceVinosPaypal-ASP-NE
 D:\Trabajando\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaEntidad\obj\Debug\CapaEntidad.csproj.CoreCompileInputs.cache
 D:\Trabajando\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaEntidad\obj\Debug\CapaEntidad.dll
 D:\Trabajando\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaEntidad\obj\Debug\CapaEntidad.pdb
+D:\Trabajando\Asp Net\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaEntidad\bin\Debug\CapaEntidad.dll
+D:\Trabajando\Asp Net\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaEntidad\bin\Debug\CapaEntidad.pdb
+D:\Trabajando\Asp Net\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaEntidad\obj\Debug\CapaEntidad.csproj.AssemblyReference.cache
+D:\Trabajando\Asp Net\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaEntidad\obj\Debug\CapaEntidad.csproj.CoreCompileInputs.cache
+D:\Trabajando\Asp Net\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaEntidad\obj\Debug\CapaEntidad.dll
+D:\Trabajando\Asp Net\ecommerceVinosPaypal-ASP-NET-FRAMEWORK\CapaEntidad\obj\Debug\CapaEntidad.pdb

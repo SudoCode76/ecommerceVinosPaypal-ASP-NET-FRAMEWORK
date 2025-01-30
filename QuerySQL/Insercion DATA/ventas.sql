@@ -36,3 +36,6 @@ VALUES
 INSERT INTO DETALLE_VENTA (IdVenta, IdProducto, Cantidad, Total)
 VALUES 
 (3, 1, 3, 105.00); -- Juan compró 3 Malbec, pero la transacción aún no está confirmada
+
+
+SELECT  * FROM VENTA;

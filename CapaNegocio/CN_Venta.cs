@@ -13,6 +13,8 @@ namespace CapaNegocio
     public class CN_Venta
     {
         private CD_Venta objCapaDato = new CD_Venta();
+
+        
         public bool Registrar(Venta obj, DataTable DetalleVenta, out string Mensaje)
         {
             return objCapaDato.Registrar(obj, DetalleVenta, out Mensaje);
@@ -21,6 +23,17 @@ namespace CapaNegocio
         public List<DetalleVenta> ListarCompras(int idcliente)
         {
             return objCapaDato.ListarCompras(idcliente);
+        }
+
+        //Listar todas las compras
+
+        public List<Venta> Listar()
+        {
+            return objCapaDato.Listar();
+        }
+        public bool Eliminar(int id, out string Mesaje)
+        {
+            return objCapaDato.Eliminar(id, out Mesaje);
         }
 
     }

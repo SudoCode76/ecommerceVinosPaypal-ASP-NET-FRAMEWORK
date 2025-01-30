@@ -18,5 +18,8 @@ namespace CapaEntidad
         public string Direccion { get; set; }
         public string IdTransaccion { get; set; }
         public List<DetalleVenta> oDetalleVenta { get; set; }
+
+
+        public string NombreCliente { get; set; }
     }
 }
