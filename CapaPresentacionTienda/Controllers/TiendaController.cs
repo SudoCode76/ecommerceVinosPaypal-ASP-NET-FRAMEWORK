@@ -34,6 +34,7 @@ namespace CapaPresentacionTienda.Controllers
             return View();
         }
 
+
         public ActionResult Nosotros()
         {
             return View();
@@ -260,8 +261,8 @@ namespace CapaPresentacionTienda.Controllers
                     landing_page = "NO_PREFERENCE",
                     user_action = "PAY_NOW",
                     // CAMBIAR POR URL DE SU SERVIDOR
-                    return_url = "localhost:44351/Tienda/PagoEfectuado",
-                    cancel_url = "localhost:44351/Tienda/Carrito"
+                    return_url = "https://localhost:44351/Tienda/PagoEfectuado",
+                    cancel_url = "https://localhost:44351/Tienda/Carrito"
                 }
             };
             oVenta.MontoTotal = total;

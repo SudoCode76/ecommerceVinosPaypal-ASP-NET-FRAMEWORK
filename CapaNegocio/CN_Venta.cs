@@ -31,10 +31,7 @@ namespace CapaNegocio
         {
             return objCapaDato.Listar();
         }
-        public bool Eliminar(int id, out string Mesaje)
-        {
-            return objCapaDato.Eliminar(id, out Mesaje);
-        }
+
 
     }
 }
