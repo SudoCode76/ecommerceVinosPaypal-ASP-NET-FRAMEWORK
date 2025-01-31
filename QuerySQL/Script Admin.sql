@@ -404,14 +404,35 @@ FROM
 ORDER BY 
     name;
 
+GO
+CREATE PROCEDURE sp_EliminarAdministrativo
+    @IdAdministrativo INT,
+    @Resultado INT OUTPUT,
+    @Mensaje NVARCHAR(250) OUTPUT
+AS
+BEGIN
+    SET NOCOUNT ON;
 
-INSERT INTO ADMINISTRATIVO (Nombres, Apellidos, Correo, Clave, Activo)
-VALUES (
-    'admin',
-    'admin',
-    'admin@admin.com',
-    CONVERT(VARCHAR(150), HASHBYTES('SHA2_256', 'admin'), 2), -- Genera el hash SHA-256
-    1 -- Activo por defecto
-);
+    BEGIN TRY
+        -- Verificar si el administrador existe
+        IF EXISTS (SELECT 1 FROM ADMINISTRATIVO WHERE IdAdministrativo = @IdAdministrativo)
+        BEGIN
+            -- Desactivar el administrador (eliminación lógica)
+            UPDATE ADMINISTRATIVO
+            SET Activo = 0
+            WHERE IdAdministrativo = @IdAdministrativo;
 
-SELECT * FROM ADMINISTRATIVO;
+            SET @Resultado = 1;
+            SET @Mensaje = 'El administrador ha sido eliminado exitosamente.';
+        END
+        ELSE
+        BEGIN
+            SET @Resultado = 0;
+            SET @Mensaje = 'El administrador no existe.';
+        END
+    END TRY
+    BEGIN CATCH
+        SET @Resultado = 0;
+        SET @Mensaje = ERROR_MESSAGE();
+    END CATCH
+END;
