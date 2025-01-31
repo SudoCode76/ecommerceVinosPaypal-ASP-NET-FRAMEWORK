@@ -19,20 +19,7 @@ namespace CapaPresentacionAdministrador.Controllers
             return View(oLista);
         }
 
-        public ActionResult Eliminar(int id)
-        {
-            string mensaje = string.Empty;
-            bool resultado = objNegocio.Eliminar(id, out mensaje);
-            if (resultado)
-            {
-                return RedirectToAction("ListaVentas", "Ventas");
-            }
-            else
-            {
-                ViewBag.Error = mensaje;
-                return RedirectToAction("ListaVentas", "Ventas");
-            }
-        }
+
 
         public ActionResult DetalleVenta(int id)
         {
