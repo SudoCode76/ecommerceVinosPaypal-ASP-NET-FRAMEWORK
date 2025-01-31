@@ -1,0 +1,21 @@
+
+
+# Archivos de NuGet y configuración
+*.nupkg
+*.snupkg
+packages/
+project.lock.json
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Archivos compilados y temporales
+bin/
+obj/
+TestResults/
+.vs/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db

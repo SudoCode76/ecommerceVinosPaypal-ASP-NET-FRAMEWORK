@@ -1,0 +1,78 @@
+﻿@model IEnumerable<CapaEntidad.Administrativo>
+
+@{
+    ViewBag.Title = "ListaUsuarios";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+
+}
+
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>¡Éxito!</strong> @TempData["Success"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>¡Error!</strong> @TempData["Error"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+
+
+
+
+
+<h2 class="h3 mb-2 text-gray-800">Lista de Usuarios</h2>
+<p class="mb-4">Esta es la lista de usuarios registrados en el sistema. Puede buscar y ordenar los datos utilizando la tabla interactiva.</p>
+
+<!-- Botón para registrar un nuevo usuario -->
+<div style="text-align: right" class="form-inline mb-3">
+    <a href="Registrar" class="btn btn-primary">
+        <i class="fas fa-plus"></i> Registrar Usuario
+    </a>
+</div>
+
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Lista de Usuarios</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Nombres)</th>
+                        <th>@Html.DisplayNameFor(model => model.Apellidos)</th>
+                        <th>@Html.DisplayNameFor(model => model.Correo)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.Nombres)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Apellidos)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Correo)</td>
+                            <td class="text-center">
+
+                                <a href="@Url.Action("Eliminar", "Usuario", new { id = item.IdAdministrativo })" class="btn btn-danger btn-sm">
+                                    <i class="fas fa-trash"></i> Eliminar
+                                </a>
+                            </td>
+                        </tr>
+
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
