@@ -5,6 +5,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@if (TempData["existe"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong></strong> @TempData["existe"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
 <!DOCTYPE html>
 
 <html>
@@ -67,7 +75,7 @@
                                     </form>
                                 </div>
                                 <div class="card-footer text-center py-3">
-                                    <div class="small"><a href="@Url.Action("ListaUsuarios","Usuario")">Volver a la lista</a></div>
+                                    <button class="btn btn-danger text-white" onclick="window.location='@Url.Action("ListaUsuarios","Usuario")';">Cancelar</button>
                                 </div>
                             </div>
                         </div>
@@ -75,22 +83,7 @@
                 </div>
             </main>
         </div>
-        <div id="layoutAuthentication_footer">
-            <footer class="py-4 bg-light mt-auto">
-                <div class="container-fluid px-4">
-                    <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Copyright &copy; 2025</div>
-                        <div>
-                            <a href="#">Privacy Policy</a>
-                            &middot;
-                            <a href="#">Terms &amp; Conditions</a>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-        </div>
     </div>
-    <script src="~/Scripts/bootstrap.bundle.js"></script>
 </body>
 </html>
 

@@ -44,7 +44,16 @@ namespace CapaNegocio
             }
         }
 
-        
-        
+        public bool Eliminar(int id, out string Mensaje)
+        {
+            return objCapaDato.Eliminar(id, out Mensaje);
+        }
+
+        public bool ExisteCorreo(string correo)
+        {
+            return objCapaDato.ExisteCorreo(correo);
+        }
+
+
     }
 }

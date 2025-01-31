@@ -19,7 +19,7 @@ namespace CapaDatos
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cn))
                 {
                     // EJECUTA SENTENCIA SQL 
-                    string query = "SELECT IdAdministrativo,Nombres,Apellidos,Correo,Clave, Activo FROM Administrativo";
+                    string query = "SELECT IdAdministrativo, Nombres, Apellidos, Correo, Clave, Activo FROM Administrativo WHERE Activo = 1";
                     SqlCommand cmd = new SqlCommand(query, oconexion);
                     cmd.CommandType = CommandType.Text;
                     oconexion.Open();
@@ -87,5 +87,62 @@ namespace CapaDatos
             }
             return idautogenerado;
         }
+
+
+        public bool Eliminar(int id, out string Mensaje)
+        {
+            bool resultado = false;
+            Mensaje = string.Empty;
+
+            try
+            {
+                using (SqlConnection oconexion = new SqlConnection(Conexion.cn))
+                {
+                    SqlCommand cmd = new SqlCommand("sp_EliminarAdministrativo", oconexion);
+                    cmd.Parameters.AddWithValue("IdAdministrativo", id);
+                    cmd.Parameters.Add("Resultado", SqlDbType.Bit).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 250).Direction = ParameterDirection.Output;
+
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    oconexion.Open();
+                    cmd.ExecuteNonQuery();
+
+                    resultado = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
+                    Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                resultado = false;
+                Mensaje = ex.Message;
+            }
+
+            return resultado;
+        }
+
+        public bool ExisteCorreo(string correo)
+        {
+            bool existe = false;
+            try
+            {
+                using (SqlConnection oconexion = new SqlConnection(Conexion.cn))
+                {
+                    string query = "SELECT COUNT(1) FROM Administrativo WHERE Correo = @Correo AND Activo = 1";
+                    SqlCommand cmd = new SqlCommand(query, oconexion);
+                    cmd.Parameters.AddWithValue("@Correo", correo);
+                    cmd.CommandType = CommandType.Text;
+
+                    oconexion.Open();
+                    existe = Convert.ToBoolean(cmd.ExecuteScalar());
+                }
+            }
+            catch (Exception ex)
+            {
+                string error = ex.Message;
+            }
+            return existe;
+        }
+
+
     }
 }

@@ -1,115 +1,114 @@
-<!--
+<style>
+    .alert-warning-custom {
+        background-color: #8b0000; /* Fondo burdeos */
+        color: #fff; /* Texto blanco */
+        border-radius: 8px;
+    }
 
-░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-░        CARRITO DE COMPRAS / MVC ASP.NET ADO.NET          ░
-░--------------------------------------------------------- ░
-░- -> IDEA ORIGINAL POR PARTE DE [ CODIGO ESTUDIANTE ]     ░
-░--------------------------------------------------------- ░
-░- -> ADECUADO Y MODIFICADO POR DANIEL RIVERA              ░
-░--------------------------------------------------------- ░
-░- -> C# - ASP.NET / ADO.NET => .NET FRAMEWORK 4.7 up+     ░
-░- -> GITHUB: (danielrivera03)                             ░
-░     https://github.com/DanielRivera03                    ░
-░--------------------------------------------------------- ░
-░- -> TODOS LOS DERECHOS RESERVADOS © 2022                 ░
-░                                                          ░
-░        ♥♥ HECHO CON ALGUNAS TAZAS DE CAFE ♥♥             ░
-░                                                          ░
-░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
--> POR FAVOR REALIZAR TODAS LAS ADECUACIONES PERTINENTES
+    .card-producto {
+        background-color: #333; /* Fondo oscuro para productos */
+        color: #fff;
+        border: 1px solid #444;
+        border-radius: 12px;
+    }
 
--->
-@{
-    ViewBag.Title = "Carrito";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-<div class=" container my-5">
+    .btn-outline-light {
+        border-color: #bc8f8f;
+        color: #fff;
+    }
+
+        .btn-outline-light:hover {
+            background-color: #bc8f8f;
+            color: #000;
+        }
+</style>
+
+<div class="container my-5">
     <div class="row">
         <div class="col-sm-12">
-            <div class="card">
+            <div class="card bg-dark text-white shadow-lg border-0">
                 <div class="card-body">
                     <div class="row">
                         <!-- PRODUCTOS INFORMACION-->
                         <div class="col-sm-8">
                             <div class="me-2">
-                                <div class="d-flex justify-content-between">
-                                    <h5 class="ms-2 mt-2">Detalle Final - Carrito de Compras</h5>
-                                    <a class="btn btn-success" href="@Url.Action("Index","Tienda")"><i class="fas fa-cart-plus"></i> Seguir Comprando</a>
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                    <h4 class="ms-2">Detalle Final - Carrito de Compras</h4>
+                                    <a class="btn btn-outline-light px-4 py-2 fw-bold" href="@Url.Action("Index","Tienda")">
+                                        <i class="fas fa-cart-plus"></i> Seguir Comprando
+                                    </a>
                                 </div>
-                                <hr class="mt-2 mb-2" />
-                                <div class="alert alert-primary d-flex align-items-center" role="alert">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
-                                        <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-                                    </svg>
-                                    <div>
-                                        Gracias por su compra, nuestro canal de pago es a trav&eacute;s de Paypal, por lo cual usted podr&aacute; efectuar su pago ya sea
-                                        desde su cuenta asociada, o bien desde una tarjeta de cr&eacute;dito o d&eacute;bito.
+                                <hr class="mt-2 mb-4 bg-secondary" />
+
+                                <!-- Alerta personalizada -->
+                                <div class="alert alert-warning-custom d-flex align-items-center rounded-4 p-3 shadow-sm" role="alert">
+                                    <i class="fas fa-info-circle me-3 fa-2x"></i>
+                                    <div class="fs-6">
+                                        Gracias por su compra. Nuestro canal de pago es a través de PayPal, donde podrá pagar con tarjeta de crédito o débito.
                                     </div>
                                 </div>
-                                <div id="productos-carrito">
-                                    <div class="card mb-2 card-producto">
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-sm-2 align-self-center d-flex justify-content-center">
-                                                    <img style="width: 105px; height: 105px;" class="rounded" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" />
-                                                </div>
-                                                <div class="col-sm-4 align-self-center">
-                                                    <span class="font-weight-bold d-block">Marca</span>
-                                                    <span>Nombre del Producto</span>
-                                                </div>
-                                                <div class="col-sm-2 align-self-center">
-                                                    <span>Precio Total: $ 0.00 USD</span>
-                                                </div>
-                                                <div class="col-sm-2 align-self-center">
-                                                    <div class="d-flex">
-                                                        <button class="btn btn-outline-info btn-restar rounded-0"><i class="fas fa-minus"></i></button>
-                                                        <input class="form-control input-cantidad p-1 text-center rounded-0" disabled style="width: 40px;" />
-                                                        <button class="btn btn-outline-success btn-sumar rounded-0"><i class="fas fa-plus"></i></button>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-2 align-self-center">
-                                                    <button class="btn btn-outline-danger btn-eliminar rounded-0"><i class="fas fa-trash"></i></button>
-                                                </div>
+
+                                <!-- Productos en el carrito -->
+                                <div id="productos-carrito" class="mt-4">
+                                    <div class="card-producto mb-3 shadow rounded-3 p-3">
+                                        <div class="d-flex align-items-center">
+                                            <div class="col-sm-2 d-flex justify-content-center">
+                                                <img src="https://dummyimage.com/450x300/8b0000/ffffff.jpg" class="rounded shadow-lg" style="width: 120px; height: 120px;" alt="Producto" />
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <h5 class="fw-bold">Nombre del Producto</h5>
+                                                <p class="text-muted">Marca</p>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <span class="fw-bold fs-5">$22.99 USD</span>
+                                            </div>
+                                            <div class="col-sm-2 text-center">
+                                                <button class="btn btn-outline-light btn-sm me-2"><i class="fas fa-minus"></i></button>
+                                                <input class="form-control d-inline text-center bg-dark text-white border-secondary mx-2" disabled style="width: 50px;" value="1" />
+                                                <button class="btn btn-outline-light btn-sm ms-2"><i class="fas fa-plus"></i></button>
+                                                <button class="btn btn-outline-danger btn-sm mt-2"><i class="fas fa-trash"></i> Quitar</button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <!-- SUMA TOTAL CARRITO -->
-                                <div class="d-flex justify-content-end">
-                                    <label class="align-self-center"><strong>Total Cancelar: $<span id="total">0.00</span> USD</strong></label>
+
+                                <!-- Total a Pagar -->
+                                <div class="d-flex justify-content-end mt-4">
+                                    <label class="align-self-center h5"><strong>Total a Pagar: $<span id="total">22.99</span> USD</strong></label>
                                 </div>
                             </div>
                         </div>
+
                         <!-- PROCESAR DATOS -->
                         <div class="col-sm-4">
-                            <div class="card">
-                                <div class="card-body bg-dark">
-                                    <h5 class="card-title text-white text-center">Detalle Env&iacute;o</h5>
+                            <div class="card bg-dark border-0 shadow-lg rounded-4">
+                                <div class="card-body text-white">
+                                    <h5 class="card-title text-center mb-4">Detalle de Envío</h5>
                                     <form>
-                                        <div class="mb-2">
-                                            <label for="cbodepartamento" class="form-label text-white mt-4">Departamento</label>
-                                            <select class="form-select form-select-sm" id="cbodepartamento"></select>
+                                        <div class="mb-3">
+                                            <label for="cbodepartamento" class="form-label">Departamento</label>
+                                            <select class="form-select form-select-sm bg-secondary text-white border-secondary" id="cbodepartamento"></select>
                                         </div>
-                                        <div class="mb-2">
-                                            <label for="cboprovincia" class="form-label text-white">Municipio</label>
-                                            <select class="form-select form-select-sm" id="cboprovincia"></select>
+                                        <div class="mb-3">
+                                            <label for="cboprovincia" class="form-label">Municipio</label>
+                                            <select class="form-select form-select-sm bg-secondary text-white border-secondary" id="cboprovincia"></select>
                                         </div>
-                                        <div class="mb-2">
-                                            <label class="form-label text-white">Nombre Completo</label>
-                                            <input type="text" class="form-control form-control-sm" id="txtnombrecontacto" />
+                                        <div class="mb-3">
+                                            <label class="form-label">Nombre Completo</label>
+                                            <input type="text" class="form-control form-control-sm bg-secondary text-white border-secondary" id="txtnombrecontacto" />
                                         </div>
-                                        <div class="mb-2">
-                                            <label class="form-label text-white">Direcci&oacute;n Completa</label>
-                                            <input type="text" class="form-control form-control-sm" id="txtdireccion" />
+                                        <div class="mb-3">
+                                            <label class="form-label">Dirección Completa</label>
+                                            <input type="text" class="form-control form-control-sm bg-secondary text-white border-secondary" id="txtdireccion" />
                                         </div>
-                                        <div class="mb-2">
-                                            <label class="form-label text-white">Tel&eacute;fono</label>
-                                            <input type="text" class="form-control form-control-sm" id="txttelefono" />
+                                        <div class="mb-3">
+                                            <label class="form-label">Teléfono</label>
+                                            <input type="text" class="form-control form-control-sm bg-secondary text-white border-secondary" id="txttelefono" />
                                         </div>
                                         <div class="d-grid">
-                                            <button class="btn btn-danger text-white" type="button" onclick="RealizarPago()"><i class="fab fa-paypal"></i> Procesar Pago</button>
+                                            <button class="btn btn-danger text-white fw-bold py-2" type="button" onclick="RealizarPago()">
+                                                <i class="fab fa-paypal"></i> Procesar Pago
+                                            </button>
                                         </div>
                                     </form>
                                 </div>
@@ -121,6 +120,7 @@
         </div>
     </div>
 </div>
+
 
 @section scripts{
 
@@ -151,8 +151,13 @@
                                 $("<div>").addClass("row").append(
                                     // COLUMNA 1
                                     $("<div>").addClass("col-sm-2 align-self-center d-flex justify-content-center").append(
-                                        $("<img>").addClass("rounded").attr({ "src": "data:image" + item.oProducto.Extension + ";base64," + item.oProducto.Base64 }).
-                                            css({ "width": "105px", "height": "105px" })
+                                        $("<img>").addClass("rounded").attr({
+                                            "src": item.oProducto.RutaImagen,  // Usar la ruta de imagen directamente
+                                            "alt": item.oProducto.Nombre
+                                        }).css({
+                                            "width": "105px",
+                                            "height": "105px"
+                                        })
                                     ),
                                     // COLUMNA 2
                                     $("<div>").addClass("col-sm-4 align-self-center").append(
