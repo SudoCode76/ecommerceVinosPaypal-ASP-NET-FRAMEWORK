@@ -42,21 +42,16 @@ namespace CapaNegocio
         public bool Editar(Categoria obj, out string Mensaje)
         {
             Mensaje = string.Empty;
+
             if (string.IsNullOrEmpty(obj.Descripcion) || string.IsNullOrWhiteSpace(obj.Descripcion))
             {
-                Mensaje = "La descripcion de la categoria no puede estar vacia";
-            }
-
-            if (string.IsNullOrEmpty(Mensaje))
-            {
-                return objCapaDato.Editar(obj, out Mensaje);
-            }
-            else
-            {
+                Mensaje = "La descripción de la categoría no puede estar vacía.";
                 return false;
             }
 
+            return objCapaDato.Editar(obj, out Mensaje);
         }
+
 
         // ELIMINAR CATEGORIAS
         public bool Eliminar(int id, out string Mensaje)

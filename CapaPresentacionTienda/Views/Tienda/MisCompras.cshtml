@@ -1,68 +1,92 @@
-﻿
-@model List<CapaEntidad.DetalleVenta>
+﻿@model List<CapaEntidad.DetalleVenta>
 @{
-    ViewBag.Title = "MisCompras";
+    ViewBag.Title = "Mis Compras";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="container">
-    <div class="row mt-5">
+<style>
+    .header-transaccion {
+        background-color: #8b0000; /* Burdeos */
+        color: white;
+        padding: 15px;
+        border-radius: 12px;
+    }
+
+    .card-compra {
+        background-color: #2c2c2c; /* Fondo oscuro */
+        color: #fff;
+        border: 1px solid #444;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+
+    .table-dark {
+        background-color: #333;
+    }
+
+        .table-dark th {
+            color: #fff;
+        }
+
+    .btn-outline-light-custom {
+        border-color: #bc8f8f;
+        color: #fff;
+    }
+
+        .btn-outline-light-custom:hover {
+            background-color: #bc8f8f;
+            color: #000;
+        }
+</style>
+
+<div class="container mt-5">
+    <div class="row">
         <div class="col-sm-12">
-            @{
-                if (Model.Count > 0)
+            @if (Model.Count > 0)
+            {
+                foreach (var item in Model)
                 {
-                    // SI EXISTEN ELEMENTOS = MOSTRAR TODOS LOS ARTICULOS PROCESADOS Y COMPRADOS POR CLIENTES
-                    foreach (var item in Model)
-                    {
-                        <div class="row mb-3">
-                            <div class="col-sm-12">
-                                <div class="card">
-                                    <div class="card-body bg-light">
-                                        <h6>ID TRANSACCION: <strong>@item.IdTransaccion</strong></h6>
-                                        <div class="table-responsive">
-                                            <table class="table table-bordered">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Imagen</th>
-                                                        <th>Producto</th>
-                                                        <th>Precio $. USD</th>
-                                                        <th>Cantidad</th>
-                                                        <th>Total</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody class="bg-light">
-                                                    <tr>
-                                                        <td>
-                                                            <img class="card-img-top mb-5 mb-md-0" src="@item.oProducto.RutaImagen" alt="@item.oProducto.Nombre" style="width: 125px; height: 125px;" />
-                                                        </td>
-                                                        <td valign="middle">
-                                                            @item.oProducto.Nombre
-                                                        </td>
-                                                        <td valign="middle">
-                                                            $ @item.oProducto.Precio USD.
-                                                        </td>
-                                                        <td valign="middle">
-                                                            @item.Cantidad
-                                                        </td>
-                                                        <td valign="middle">
-                                                            $ @item.Total USD.
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
+                    <div class="card-compra shadow-lg">
+                        <div class="header-transaccion">
+                            <h5 class="mb-0">ID Transacción: <strong>@item.IdTransaccion</strong></h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-dark table-bordered text-white">
+                                    <thead>
+                                        <tr>
+                                            <th>Imagen</th>
+                                            <th>Producto</th>
+                                            <th>Precio ($ USD)</th>
+                                            <th>Cantidad</th>
+                                            <th>Total ($ USD)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center">
+                                                <img class="rounded shadow" src="@item.oProducto.RutaImagen" alt="@item.oProducto.Nombre" style="width: 100px; height: 100px;" />
+                                            </td>
+                                            <td class="align-middle">@item.oProducto.Nombre</td>
+                                            <td class="align-middle">$ @item.oProducto.Precio.ToString("F2") USD</td>
+                                            <td class="align-middle">@item.Cantidad</td>
+                                            <td class="align-middle">$ @item.Total.ToString("F2") USD</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
-                    }
+                    </div>
                 }
-                else
-                {
-
-                }
+            }
+            else
+            {
+                <div class="alert alert-warning text-center mt-5">
+                    <h5>No tienes compras registradas.</h5>
+                    <a href="@Url.Action("Index", "Tienda")" class="btn btn-outline-light-custom mt-3">
+                        <i class="fas fa-shopping-bag"></i> Ir a la tienda
+                    </a>
+                </div>
             }
         </div>
     </div>
 </div>
-
-
