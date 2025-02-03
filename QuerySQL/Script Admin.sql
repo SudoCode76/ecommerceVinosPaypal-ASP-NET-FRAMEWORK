@@ -438,7 +438,6 @@ BEGIN
 END;
 
 
-
 GO
 ALTER PROCEDURE sp_EliminarProducto
     @IdProducto INT,
@@ -485,5 +484,107 @@ BEGIN
         BEGIN
             ROLLBACK TRANSACTION;
         END
+    END CATCH
+END;
+
+
+
+// desde aca pc mesa
+
+
+GO
+ALTER PROCEDURE sp_EliminarCategoria
+    @IdCategoria INT,
+    @Resultado INT OUTPUT,
+    @Mensaje VARCHAR(500) OUTPUT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        -- Iniciar una transacción
+        BEGIN TRANSACTION;
+
+        -- Verificar si la categoría existe y está activa en una sola consulta
+        IF EXISTS (SELECT 1 FROM Categoria WHERE IdCategoria = @IdCategoria)
+        BEGIN
+            -- Actualizar el estado de la categoría a inactivo
+            UPDATE Categoria
+            SET Activo = 0
+            WHERE IdCategoria = @IdCategoria;
+
+            -- Confirmar la transacción
+            COMMIT TRANSACTION;
+
+            SET @Resultado = 1;
+            SET @Mensaje = 'Categoría marcada como inactiva exitosamente.';
+        END
+        ELSE
+        BEGIN
+            -- Si la categoría no existe, revertir la transacción
+            ROLLBACK TRANSACTION;
+
+            SET @Resultado = 0;
+            SET @Mensaje = 'La categoría no existe.';
+        END
+    END TRY
+    BEGIN CATCH
+        -- Manejar errores y revertir la transacción
+        IF @@TRANCOUNT > 0
+        BEGIN
+            ROLLBACK TRANSACTION;
+        END
+
+        SET @Resultado = 0;
+        SET @Mensaje = ERROR_MESSAGE();
+    END CATCH
+END;
+
+
+GO
+ALTER PROCEDURE sp_EliminarMarca
+    @IdMarca INT,
+    @Resultado INT OUTPUT,
+    @Mensaje VARCHAR(500) OUTPUT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        -- Iniciar una transacción
+        BEGIN TRANSACTION;
+
+        -- Verificar si la marca existe
+        IF EXISTS (SELECT 1 FROM Marca WHERE IdMarca = @IdMarca)
+        BEGIN
+            -- Actualizar el estado de la marca a inactivo
+            UPDATE Marca
+            SET Activo = 0
+            WHERE IdMarca = @IdMarca;
+
+            -- Confirmar la transacción
+            COMMIT TRANSACTION;
+
+            SET @Resultado = 1;
+            SET @Mensaje = 'Marca marcada como inactiva exitosamente.';
+        END
+        ELSE
+        BEGIN
+            -- Si la marca no existe, revertir la transacción
+            ROLLBACK TRANSACTION;
+
+            SET @Resultado = 0;
+            SET @Mensaje = 'La marca no existe.';
+        END
+    END TRY
+    BEGIN CATCH
+        -- Manejar errores y revertir la transacción
+        IF @@TRANCOUNT > 0
+        BEGIN
+            ROLLBACK TRANSACTION;
+        END
+
+        SET @Resultado = 0;
+        SET @Mensaje = ERROR_MESSAGE();
     END CATCH
 END;

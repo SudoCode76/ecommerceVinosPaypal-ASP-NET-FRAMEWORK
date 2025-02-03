@@ -34,7 +34,7 @@ namespace CapaPresentacionAdministrador.Controllers
 
             if (string.IsNullOrWhiteSpace(objeto.Descripcion))
             {
-                ViewBag.Error = "La descripción de la categoría no puede estar vacía.";
+                TempData["Error"] = "La descripción de la categoría no puede estar vacía.";
                 return View(objeto);
             }
 
@@ -42,12 +42,12 @@ namespace CapaPresentacionAdministrador.Controllers
 
             if (resultado > 0)
             {
-                ViewBag.Error = null;
+                TempData["Success"] = "Registro exitosamente.";
                 return RedirectToAction("ListaCategorias", "Categoria");
             }
             else
             {
-                ViewBag.Error = mensaje;
+                TempData["Error"] = mensaje;
                 return View(objeto);
             }
         }
@@ -58,6 +58,7 @@ namespace CapaPresentacionAdministrador.Controllers
             Categoria categoria = objNegocio.Listar().FirstOrDefault(c => c.IdCategoria == id);
             if (categoria == null)
             {
+
                 return RedirectToAction("ListaCategorias", "Categoria");
             }
             return View(categoria);
@@ -71,7 +72,7 @@ namespace CapaPresentacionAdministrador.Controllers
 
             if (string.IsNullOrWhiteSpace(objeto.Descripcion))
             {
-                ViewBag.Error = "La descripción de la categoría no puede estar vacía.";
+                TempData["Error"] = "La descripción de la categoría no puede estar vacía.";
                 return View(objeto);
             }
 
@@ -79,12 +80,12 @@ namespace CapaPresentacionAdministrador.Controllers
 
             if (resultado)
             {
-                ViewBag.Error = null;
+                TempData["Success"] = "Registrado exitosamente.";
                 return RedirectToAction("ListaCategorias", "Categoria");
             }
             else
             {
-                ViewBag.Error = mensaje;
+                TempData["Error"] = mensaje;
                 return View(objeto);
             }
         }
@@ -96,12 +97,13 @@ namespace CapaPresentacionAdministrador.Controllers
 
             if (resultado)
             {
-                ViewBag.Success = "Categoría eliminada exitosamente.";
+                ViewBag.Error = null;
+                TempData["Success"] = "La categoria ha sido eliminado exitosamente.";
                 return RedirectToAction("ListaCategorias", "Categoria");
             }
             else
             {
-                ViewBag.Error = mensaje;
+                TempData["Error"] = mensaje;
                 return RedirectToAction("ListaCategorias", "Categoria");
             }
         }

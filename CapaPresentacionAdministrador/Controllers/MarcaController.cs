@@ -34,7 +34,7 @@ namespace CapaPresentacionAdministrador.Controllers
 
             if (string.IsNullOrWhiteSpace(objeto.Descripcion))
             {
-                ViewBag.Error = "La descripción de la marca no puede estar vacía.";
+                TempData["Error"] = "La descripción de la marca no puede estar vacía.";
                 return View(objeto);
             }
 
@@ -43,11 +43,12 @@ namespace CapaPresentacionAdministrador.Controllers
             if (resultado > 0)
             {
                 ViewBag.Error = null;
+                TempData["Success"] = "Registro exitoso.";
                 return RedirectToAction("ListaMarcas", "Marca");
             }
             else
             {
-                ViewBag.Error = mensaje;
+                TempData["Error"] = mensaje;
                 return View(objeto);
             }
         }
@@ -58,6 +59,8 @@ namespace CapaPresentacionAdministrador.Controllers
             Marca marca = objNegocio.Listar().FirstOrDefault(c => c.IdMarca == id);
             if (marca == null)
             {
+                TempData["Success"] = "Registro exitoso.";
+
                 return RedirectToAction("ListaMarcas", "Marca");
             }
             return View(marca);
@@ -71,7 +74,7 @@ namespace CapaPresentacionAdministrador.Controllers
 
             if (string.IsNullOrWhiteSpace(objeto.Descripcion))
             {
-                ViewBag.Error = "La descripción de la marca no puede estar vacía.";
+                TempData["Error"] = "La descripción de la marca no puede estar vacía.";
                 return View(objeto);
             }
 
@@ -80,11 +83,13 @@ namespace CapaPresentacionAdministrador.Controllers
             if (resultado)
             {
                 ViewBag.Error = null;
+                TempData["Success"] = "Registro exitoso.";
+
                 return RedirectToAction("ListaMarcas", "Marca");
             }
             else
             {
-                ViewBag.Error = mensaje;
+                TempData["Error"] = mensaje;
                 return View(objeto);
             }
         }
@@ -96,12 +101,12 @@ namespace CapaPresentacionAdministrador.Controllers
 
             if (resultado)
             {
-                ViewBag.Success = "Marca eliminada exitosamente.";
+                TempData["Success"] = "Eliminado exitosamente.";
                 return RedirectToAction("ListaMarcas", "Marca");
             }
             else
             {
-                ViewBag.Error = mensaje;
+                TempData["Error"] = mensaje;
                 return RedirectToAction("ListaMarcas", "Marca");
             }
         }

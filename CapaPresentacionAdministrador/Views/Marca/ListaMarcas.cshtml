@@ -5,6 +5,25 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>¡Éxito!</strong> @TempData["Success"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>¡Error!</strong> @TempData["Error"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+
+
+
 <h2 class="h3 mb-2 text-gray-800">Lista de Marcas</h2>
 <p class="mb-4">Listado de marcas registradas en el sistema. Puede buscar y ordenar los datos utilizando la tabla interactiva.</p>
 
@@ -44,7 +63,8 @@
                                 <a href="@Url.Action("Editar", "Marca", new { id = item.IdMarca })" class="btn btn-warning btn-sm">
                                     <i class="fas fa-edit"></i> Editar
                                 </a>
-                                <a href="@Url.Action("Eliminar", "Marca", new { id = item.IdMarca })" class="btn btn-danger btn-sm">
+                                <a href="#" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#confirmModal"
+                                   data-url="@Url.Action("Eliminar", "Marca", new { id = item.IdMarca })">
                                     <i class="fas fa-trash"></i> Eliminar
                                 </a>
                             </td>
@@ -55,6 +75,31 @@
         </div>
     </div>
 </div>
+
+
+<div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLabel">Confirmar eliminación</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ¿Está seguro de que desea eliminar este usuario?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <a href="#" id="confirmDeleteButton" class="btn btn-danger">Eliminar</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
 
 @section Scripts {
     <!-- DataTables Scripts -->
@@ -67,6 +112,18 @@
                 "language": {
                     "url": "//cdn.datatables.net/plug-ins/1.11.5/i18n/Spanish.json"
                 }
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var confirmModal = document.getElementById('confirmModal');
+            confirmModal.addEventListener('show.bs.modal', function (event) {
+                var button = event.relatedTarget;
+                var deleteUrl = button.getAttribute('data-url');
+                var confirmButton = document.getElementById('confirmDeleteButton');
+                confirmButton.setAttribute('href', deleteUrl);
             });
         });
     </script>

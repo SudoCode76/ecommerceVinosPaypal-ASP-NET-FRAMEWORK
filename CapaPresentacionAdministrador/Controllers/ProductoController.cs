@@ -35,13 +35,10 @@ namespace CapaPresentacionAdministrador.Controllers
         [HttpPost]
         public ActionResult Registrar(Producto objProducto, HttpPostedFileBase Imagen)
         {
-            // Verificar si la imagen fue cargada
             if (Imagen != null && Imagen.ContentLength > 0)
             {
-                // Ruta base para guardar la imagen
                 string rutaBase = Server.MapPath("~/images/productos/");
 
-                // Verificar si la carpeta existe, si no, crearla
                 if (!Directory.Exists(rutaBase))
                 {
                     Directory.CreateDirectory(rutaBase);
@@ -76,13 +73,13 @@ namespace CapaPresentacionAdministrador.Controllers
 
             if (resultado > 0)
             {
-                // Si se registró el producto correctamente, redirigir a la lista de productos
+                TempData["Success"] = "Registro exitoso.";
                 return RedirectToAction("ListaProductos", "Producto");
             }
             else
             {
                 // Si hubo un error, mostrar el mensaje
-                ViewBag.Error = mensaje;
+                TempData["Error"] = mensaje;
                 ViewBag.Categorias = new SelectList(new CN_Categoria().Listar(), "IdCategoria", "Descripcion");
                 ViewBag.Marcas = new SelectList(new CN_Marca().Listar(), "IdMarca", "Descripcion");
                 return View(objProducto);
@@ -146,12 +143,12 @@ namespace CapaPresentacionAdministrador.Controllers
 
             if (resultado)
             {
-                ViewBag.Error = null;
+                TempData["Success"] = "Registro exitoso.";
                 return RedirectToAction("ListaProductos", "Producto");
             }
             else
             {
-                ViewBag.Error = mensaje;
+                TempData["Error"] = mensaje;
                 ViewBag.Categorias = new SelectList(new CN_Categoria().Listar(), "IdCategoria", "Descripcion");
                 ViewBag.Marcas = new SelectList(new CN_Marca().Listar(), "IdMarca", "Descripcion");
                 return View(objProducto);
@@ -167,13 +164,13 @@ namespace CapaPresentacionAdministrador.Controllers
 
             if (resultado)
             {
-                ViewBag.Success = "Producto registrado correctamente.";
+                TempData["Success"] = "Eliminado exitosamente.";
                 return RedirectToAction("ListaProductos", "Producto");
 
             }
             else
             {
-                ViewBag.Error = mensaje;
+                TempData["Error"] = mensaje;
                 return RedirectToAction("ListaProductos", "Producto");
             }
 

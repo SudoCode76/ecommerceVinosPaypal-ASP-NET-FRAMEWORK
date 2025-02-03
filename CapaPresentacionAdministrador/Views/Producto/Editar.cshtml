@@ -5,6 +5,22 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>¡Éxito!</strong> @TempData["Success"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>¡Error!</strong> @TempData["Error"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+
 <!DOCTYPE html>
 
 <html>
@@ -46,11 +62,11 @@
                                             <div class="col-md-6">
                                                 <div class="form-floating mb-3 mb-md-0">
                                                     @Html.DropDownListFor(
-                                                        modelo => modelo.oCategoria.IdCategoria,
-                                                        (SelectList)ViewBag.Categorias,
-                                                        "Selecciona una categoría",
-                                                        new { @class = "form-control", @id = "ddlCategoria" }
-                                                    )
+                                                             modelo => modelo.oCategoria.IdCategoria,
+                                                             (SelectList)ViewBag.Categorias,
+                                                             "Selecciona una categoría",
+                                                             new { @class = "form-control", @id = "ddlCategoria" }
+                                                         )
                                                     @Html.Label("ddlCategoria", "Categoría")
                                                 </div>
                                             </div>
@@ -58,11 +74,11 @@
                                             <div class="col-md-6">
                                                 <div class="form-floating mb-3 mb-md-0">
                                                     @Html.DropDownListFor(
-                                                        modelo => modelo.oMarca.IdMarca,
-                                                        (SelectList)ViewBag.Marcas,
-                                                        "Selecciona una marca",
-                                                        new { @class = "form-control", @id = "ddlMarca" }
-                                                    )
+                                                             modelo => modelo.oMarca.IdMarca,
+                                                             (SelectList)ViewBag.Marcas,
+                                                             "Selecciona una marca",
+                                                             new { @class = "form-control", @id = "ddlMarca" }
+                                                         )
                                                     @Html.Label("ddlMarca", "Marca")
                                                 </div>
                                             </div>

@@ -21,7 +21,7 @@ namespace CapaDatos
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cn))
                 {
                     // EJECUTA SENTENCIA SQL USUARIOS
-                    string query = "SELECT IdCategoria,Descripcion,Activo FROM CATEGORIA";
+                    string query = "SELECT IdCategoria,Descripcion,Activo FROM CATEGORIA WHERE Activo = 1";
                     SqlCommand cmd = new SqlCommand(query, oconexion);
                     cmd.CommandType = CommandType.Text;
                     oconexion.Open();
@@ -132,9 +132,9 @@ namespace CapaDatos
                 {
                     SqlCommand cmd = new SqlCommand("sp_EliminarCategoria", oconexion);
                     cmd.Parameters.AddWithValue("IdCategoria", id);
-                    cmd.Parameters.AddWithValue("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
-                    //cmd.Parameters.AddWithValue("Mensaje", SqlDbType.VarChar,500).Direction = ParameterDirection.Output;
-                    cmd.Parameters.AddWithValue("Mensaje", SqlDbType.VarChar).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("Resultado", SqlDbType.Bit).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 250).Direction = ParameterDirection.Output;
+                    
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     oconexion.Open();

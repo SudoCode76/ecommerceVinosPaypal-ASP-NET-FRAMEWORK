@@ -22,7 +22,7 @@ namespace CapaDatos
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cn))
                 {
                     // EJECUTA SENTENCIA SQL USUARIOS
-                    string query = "SELECT IdMarca,Descripcion,Activo FROM MARCA";
+                    string query = "SELECT IdMarca, Descripcion, Activo FROM MARCA WHERE Activo = 1";
                     SqlCommand cmd = new SqlCommand(query, oconexion);
                     cmd.CommandType = CommandType.Text;
                     oconexion.Open();
@@ -121,7 +121,6 @@ namespace CapaDatos
         }
 
 
-        // EIMINAR (OCULTAR) MARCAS -> DELETE SOLAMENTE SE EJECUTA POR MEDIO DE CONSULTA ESPECIFICA
         public bool Eliminar(int id, out string Mensaje)
         {
             bool resultado = false;
@@ -131,16 +130,18 @@ namespace CapaDatos
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cn))
                 {
                     SqlCommand cmd = new SqlCommand("sp_EliminarMarca", oconexion);
+
                     cmd.Parameters.AddWithValue("IdMarca", id);
-                    cmd.Parameters.AddWithValue("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
-                    cmd.Parameters.AddWithValue("Mensaje", SqlDbType.VarChar).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
+
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     oconexion.Open();
 
                     cmd.ExecuteNonQuery();
 
-                    resultado = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
+                    resultado = Convert.ToInt32(cmd.Parameters["Resultado"].Value) == 1;
                     Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
                 }
             }
