@@ -46,11 +46,9 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link text-light" href="@Url.Action("Index","Tienda")">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link text-light" href="@Url.Action("Categoria","Tienda")">Categorias</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="@Url.Action("Productos","Tienda")">Productos</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="@Url.Action("Contacto","Tienda")">Contacto</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="@Url.Action("Nosotros","Tienda")">Nosotros</a></li>
-                    <li class="nav-item"><a class="nav-link text-light" href="@Url.Action("Test","Tienda")">Test</a></li>
                 </ul>
                 <form class="d-flex align-items-center">
                     @if (Session["Cliente"] == null)

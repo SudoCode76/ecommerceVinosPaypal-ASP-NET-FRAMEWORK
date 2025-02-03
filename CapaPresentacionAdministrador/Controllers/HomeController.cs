@@ -1,4 +1,5 @@
-﻿using CapaNegocio;
+﻿using CapaEntidad;
+using CapaNegocio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,11 +16,11 @@ namespace CapaPresentacionAdministrador.Controllers
             return View();
         }
 
-        public ActionResult Dashboard()
+        [HttpGet]
+        public JsonResult vistaDashboard()
         {
-
-
-            return View();
+            DashBoard objeto = new CN_Reporte().VerDashboard();
+            return Json(new { resultado = objeto }, JsonRequestBehavior.AllowGet); 
         }
 
     }

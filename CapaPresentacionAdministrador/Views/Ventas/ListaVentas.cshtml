@@ -23,7 +23,6 @@
                         <th>@Html.DisplayNameFor(model => model.Contacto)</th>
                         <th>@Html.DisplayNameFor(model => model.Telefono)</th>
                         <th>@Html.DisplayNameFor(model => model.Direccion)</th>
-                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tfoot>
@@ -34,7 +33,6 @@
                         <th>@Html.DisplayNameFor(model => model.Contacto)</th>
                         <th>@Html.DisplayNameFor(model => model.Telefono)</th>
                         <th>@Html.DisplayNameFor(model => model.Direccion)</th>
-                        <th>Acciones</th>
                     </tr>
                 </tfoot>
                 <tbody>
@@ -46,15 +44,7 @@
                             <th>@Html.DisplayFor(modelItem => item.MontoTotal)</th>
                             <th>@Html.DisplayFor(modelItem => item.Contacto)</th>
                             <th>@Html.DisplayFor(modelItem => item.Telefono)</th>
-                            <th>@Html.DisplayFor(modelItem => item.Direccion)</th>
-                            <td class="text-center">
-                                <a href="@Url.Action("DetalleVenta", "Ventas", new { id = item.IdVenta })" class="btn btn-warning btn-sm">
-                                    <i class="fas fa-edit"></i> Editar
-                                </a>
-                                <a href="@Url.Action("Eliminar", "Ventas", new { id = item.IdVenta })" class="btn btn-danger btn-sm">
-                                    <i class="fas fa-trash"></i> Eliminar
-                                </a>
-                            </td>
+                            <th>@Html.DisplayFor(modelItem => item.Direccion)</th>                     
                         </tr>
                     }
                 </tbody>
